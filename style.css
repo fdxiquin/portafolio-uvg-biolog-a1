@@ -1,0 +1,499 @@
+/*
+  HOJA DE ESTILOS DEL PORTAFOLIO
+  ---------------------------------------------------------------------------
+  Aquí se controla todo lo visual: colores, tamaños, espaciados, tarjetas,
+  navegación y diseño responsive.
+
+  Para cambiar la identidad visual del portafolio:
+  1. Modifica las variables de :root.
+  2. Ajusta componentes específicos más abajo si necesitas detalles finos.
+*/
+
+:root {
+  /* Paleta principal: profesional, académica y con contraste cálido. */
+  --ink: #16201f;
+  --ink-soft: #33413f;
+  --paper: #f8f5ee;
+  --paper-deep: #ece4d7;
+  --teal: #1e6f67;
+  --teal-dark: #154a46;
+  --coral: #bd5946;
+  --gold: #c49a45;
+  --line: rgba(22, 32, 31, 0.16);
+  --white: #ffffff;
+  --shadow: 0 20px 48px rgba(22, 32, 31, 0.14);
+  --radius: 8px;
+  --nav-height: 76px;
+  --wrap: min(1160px, calc(100% - 32px));
+}
+
+/*
+  RESET GENERAL:
+  Mantiene medidas consistentes entre navegadores.
+*/
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    linear-gradient(90deg, rgba(30, 111, 103, 0.08) 0 1px, transparent 1px 100%),
+    linear-gradient(180deg, rgba(30, 111, 103, 0.08) 0 1px, transparent 1px 100%),
+    var(--paper);
+  background-size: 40px 40px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.7;
+}
+
+body.is-locked {
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  BARRA SUPERIOR:
+  Cambia colores o altura aquí si necesitas más espacio de navegación.
+*/
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  min-height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 12px max(16px, calc((100% - 1160px) / 2));
+  background: rgba(248, 245, 238, 0.92);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(16px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand__mark {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius);
+  color: var(--white);
+  background: var(--teal-dark);
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.brand__copy {
+  display: grid;
+  line-height: 1.25;
+}
+
+.brand__copy small {
+  color: var(--ink-soft);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav__link {
+  padding: 9px 12px;
+  border-radius: var(--radius);
+  color: var(--ink-soft);
+  font-size: 0.94rem;
+  text-decoration: none;
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.nav__link:hover,
+.nav__link.is-active {
+  color: var(--white);
+  background: var(--teal);
+}
+
+/*
+  ESTRUCTURA DE SECCIONES:
+  section-shell da ancho, separación y punto correcto para scroll con navbar.
+*/
+.section-shell {
+  width: var(--wrap);
+  margin: 0 auto;
+  padding: 74px 0;
+  scroll-margin-top: calc(var(--nav-height) + 20px);
+}
+
+.section-band {
+  width: 100%;
+  padding-inline: max(16px, calc((100% - 1160px) / 2));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.58), rgba(236, 228, 215, 0.72));
+  border-block: 1px solid var(--line);
+}
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 28px;
+}
+
+.section-heading h2,
+.collection-block__head h3,
+.hero h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.section-heading h2 {
+  font-size: clamp(2rem, 4vw, 3.35rem);
+}
+
+.section-heading p {
+  margin: 12px 0 0;
+  color: var(--ink-soft);
+}
+
+.kicker {
+  margin: 0 0 10px;
+  color: var(--coral);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/*
+  HERO:
+  Primera pantalla real del portafolio. Para cambiar la foto, edita portfolio-data.js.
+*/
+.hero {
+  min-height: calc(100vh - var(--nav-height));
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.75fr);
+  align-items: center;
+  gap: 34px;
+}
+
+.hero h1 {
+  max-width: 10ch;
+  font-size: clamp(3rem, 7vw, 5.8rem);
+}
+
+.hero__lead {
+  max-width: 62ch;
+  margin: 22px 0;
+  color: var(--ink-soft);
+  font-size: 1.08rem;
+}
+
+.hero__media {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.hero__media img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.hero__media figcaption {
+  padding: 12px 14px;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+/*
+  DATOS RÁPIDOS:
+  Se generan desde portfolioData.profile.facts.
+*/
+.fact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.fact {
+  min-height: 106px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.64);
+}
+
+.fact span {
+  display: block;
+  color: var(--teal-dark);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.fact strong {
+  display: block;
+  margin-top: 6px;
+  line-height: 1.45;
+}
+
+/*
+  TARJETAS Y COLECCIONES:
+  Reutilizadas para casos, actividades, pasaportes y laboratorios.
+*/
+.content-grid,
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.content-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card,
+.reflection-panel {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 12px 28px rgba(22, 32, 31, 0.08);
+}
+
+.card {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  padding: 18px;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(30, 111, 103, 0.36);
+  box-shadow: var(--shadow);
+}
+
+.card--wide {
+  grid-column: span 2;
+}
+
+.card__meta {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 12px;
+  padding: 5px 8px;
+  border-radius: var(--radius);
+  color: var(--white);
+  background: var(--teal-dark);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.card h3 {
+  margin: 0 0 10px;
+  font-size: 1.22rem;
+  line-height: 1.25;
+}
+
+.card p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.card__details {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.card__details ul,
+.evidence-list {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.card__details li,
+.evidence-list li {
+  margin: 4px 0;
+}
+
+.evidence-list a {
+  color: var(--teal-dark);
+  font-weight: 700;
+}
+
+.collection-block {
+  margin-top: 42px;
+}
+
+.collection-block__head {
+  display: grid;
+  grid-template-columns: minmax(0, 0.65fr) minmax(220px, 0.35fr);
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 16px;
+}
+
+.collection-block__head h3 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.collection-block__head p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+/*
+  REFLEXIONES LARGAS:
+  Usadas en cortos, CSI y cierre final.
+*/
+.reflection-panel {
+  padding: 22px;
+}
+
+.reflection-panel p,
+.closing__text p {
+  margin: 0 0 14px;
+  color: var(--ink-soft);
+}
+
+.reflection-panel p:last-child,
+.closing__text p:last-child {
+  margin-bottom: 0;
+}
+
+.closing {
+  display: grid;
+  grid-template-columns: minmax(0, 0.4fr) minmax(0, 0.6fr);
+  gap: 30px;
+  align-items: start;
+}
+
+.closing__text {
+  padding: 24px;
+  border-left: 5px solid var(--gold);
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.footer {
+  width: var(--wrap);
+  margin: 0 auto;
+  padding: 28px 0 44px;
+  color: var(--ink-soft);
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+
+/*
+  ANIMACIONES:
+  style.js agrega .is-visible cuando una tarjeta entra en pantalla.
+*/
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*
+  RESPONSIVE:
+  Ajustes para tablets y celulares. Si agregas más columnas, revisa esta zona.
+*/
+@media (max-width: 900px) {
+  .topbar {
+    position: static;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .hero,
+  .closing,
+  .collection-block__head {
+    grid-template-columns: 1fr;
+  }
+
+  .content-grid,
+  .card-grid,
+  .fact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card--wide {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  :root {
+    --wrap: min(100% - 24px, 1160px);
+  }
+
+  .section-shell {
+    padding: 48px 0;
+  }
+
+  .section-band {
+    padding-inline: 12px;
+  }
+
+  .brand__copy strong {
+    font-size: 0.96rem;
+  }
+}
+
+/*
+  ACCESIBILIDAD:
+  Respeta usuarios que prefieren menos movimiento.
+*/
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

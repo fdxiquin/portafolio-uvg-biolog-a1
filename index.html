@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio Digital | Ciencias de la Vida</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!--
+    ENCABEZADO FIJO:
+    Cambia el nombre, subtitulo o enlaces en esta zona si agregas nuevas secciones.
+    Los href deben coincidir con el id de cada section.
+  -->
+  <header class="topbar" data-topbar>
+    <a class="brand" href="#inicio" aria-label="Ir al inicio del portafolio">
+      <span class="brand__mark">DX</span>
+      <span class="brand__copy">
+        <strong>Daniel Fernando Xiquin Tezén</strong>
+        <small>Ciencias de la Vida | Entrega 2</small>
+      </span>
+    </a>
+
+    <!--
+      NAVEGACIÓN:
+      Para agregar una sección nueva:
+      1. Crea un <section id="nuevo-id"> en el main.
+      2. Agrega aquí un enlace con href="#nuevo-id".
+    -->
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="#inicio" class="nav__link is-active">Inicio</a>
+      <a href="#teoria" class="nav__link">Teoría</a>
+      <a href="#laboratorio" class="nav__link">Laboratorio</a>
+      <a href="#cierre" class="nav__link">Cierre</a>
+    </nav>
+  </header>
+
+  <main>
+    <!--
+      HERO / PRESENTACIÓN:
+      Los textos de portada se toman desde portfolio-data.js.
+      Si quieres cambiar foto, actualiza la ruta en portfolioData.profile.photo.
+    -->
+    <section id="inicio" class="hero section-shell" aria-labelledby="hero-title">
+      <div class="hero__content">
+        <p class="kicker">Portafolio académico</p>
+        <h1 id="hero-title" data-field="profile.name">Daniel Fernando Xiquin Tezén</h1>
+        <p class="hero__lead" data-field="profile.summary"></p>
+
+        <!-- Estos datos se llenan con JavaScript desde portfolio-data.js. -->
+        <div class="fact-grid" data-render="profileFacts"></div>
+      </div>
+
+      <figure class="hero__media">
+        <img data-field-image="profile.photo" src="../../Portafolio_1/Alumnos ENA-32 (2).jpg" alt="Retrato académico de Daniel Fernando Xiquin Tezén">
+        <figcaption data-field="profile.caption"></figcaption>
+      </figure>
+    </section>
+
+    <!--
+      SECCIÓN INICIO:
+      Incluye introducción, intereses biológicos y reflexión general actualizada.
+      Edita estos bloques desde portfolioData.homeBlocks.
+    -->
+    <section class="section-shell" aria-labelledby="inicio-title">
+      <div class="section-heading">
+        <p class="kicker">Sección Inicio</p>
+        <h2 id="inicio-title">Relación personal con las ciencias biológicas</h2>
+        <p>Presentación del estudiante antes, durante y después del curso.</p>
+      </div>
+      <div class="content-grid" data-render="homeBlocks"></div>
+    </section>
+
+    <!--
+      SECCIÓN TEORÍA:
+      Renderiza casos integradores, actividades favoritas, actividades no llamativas y cortos.
+      Para agregar evidencias o textos, edita portfolioData.theory.
+    -->
+    <section id="teoria" class="section-shell section-band" aria-labelledby="teoria-title">
+      <div class="section-heading">
+        <p class="kicker">Sección Teoría</p>
+        <h2 id="teoria-title">Análisis, estudio y reflexión conceptual</h2>
+        <p>Registro de pruebas integradoras, actividades y desempeño en cortos de teoría.</p>
+      </div>
+
+      <!-- Cada div con data-render se llena automáticamente desde style.js. -->
+      <article class="collection-block">
+        <div class="collection-block__head">
+          <h3>Casos integradores</h3>
+          <p>Pruebas, datos generales y reflexión sobre estrategia de estudio.</p>
+        </div>
+        <div class="card-grid" data-render="integrativeCases"></div>
+      </article>
+
+      <article class="collection-block">
+        <div class="collection-block__head">
+          <h3>Actividades favoritas</h3>
+          <p>Actividades que conectaron biodiversidad, biogeografía y exploración del entorno.</p>
+        </div>
+        <div class="card-grid" data-render="favoriteActivities"></div>
+      </article>
+
+      <article class="collection-block">
+        <div class="collection-block__head">
+          <h3>Actividades no llamativas</h3>
+          <p>Actividades que representaron mayor cansancio, extensión o dificultad de enfoque.</p>
+        </div>
+        <div class="card-grid" data-render="leastFavoriteActivities"></div>
+      </article>
+
+      <article class="collection-block">
+        <div class="collection-block__head">
+          <h3>Cortos de teoría</h3>
+          <p>Relación entre tiempo de estudio, método de preparación y desempeño.</p>
+        </div>
+        <div class="reflection-panel" data-render="theoryShorts"></div>
+      </article>
+    </section>
+
+    <!--
+      SECCIÓN LABORATORIO:
+      Incluye pasaportes, cortos, laboratorios favoritos/no favoritos y CSI.
+      Edita los textos y archivos de evidencia desde portfolioData.lab.
+    -->
+    <section id="laboratorio" class="section-shell" aria-labelledby="laboratorio-title">
+      <div class="section-heading">
+        <p class="kicker">Sección Laboratorio</p>
+        <h2 id="laboratorio-title">Aprendizaje práctico y aplicación de destrezas</h2>
+        <p>Experiencias donde la teoría se transforma en observación, evidencia y criterio.</p>
+      </div>
+
+      <article class="collection-block">
+        <div class="collection-block__head">
+          <h3>Pasaportes</h3>
+          <p>Comparación entre el pasaporte más útil y el menos útil para la preparación previa.</p>
+        </div>
+        <div class="card-grid" data-render="passports"></div>
+      </article>
+
+      <article class="collection-block">
+        <div class="collection-block__head">
+          <h3>Cortos de laboratorio</h3>
+          <p>Cómo la evaluación previa fortaleció la preparación para la práctica.</p>
+        </div>
+        <div class="reflection-panel" data-render="labShorts"></div>
+      </article>
+
+      <article class="collection-block">
+        <div class="collection-block__head">
+          <h3>Prácticas de laboratorio</h3>
+          <p>Prácticas favoritas, práctica menos favorita y aprendizaje aplicado.</p>
+        </div>
+        <div class="card-grid" data-render="labs"></div>
+      </article>
+
+      <article class="collection-block">
+        <div class="collection-block__head">
+          <h3>CSI</h3>
+          <p>Aplicación integrada de habilidades desarrolladas durante el laboratorio.</p>
+        </div>
+        <div class="reflection-panel" data-render="csi"></div>
+      </article>
+    </section>
+
+    <!--
+      CIERRE:
+      Reflexión final del curso. Edita el contenido en portfolioData.finalReflection.
+    -->
+    <section id="cierre" class="section-shell closing" aria-labelledby="cierre-title">
+      <div class="section-heading">
+        <p class="kicker">Reflexión Final</p>
+        <h2 id="cierre-title">Una mirada integral al aprendizaje del semestre</h2>
+      </div>
+      <div class="closing__text" data-render="finalReflection"></div>
+    </section>
+  </main>
+
+  <!--
+    PIE DE PÁGINA:
+    Puedes cambiar el texto o agregar fecha de entrega aquí.
+  -->
+  <footer class="footer">
+    <p>Portafolio digital elaborado para el curso Ciencias de la Vida, ciclo 1 de 2026.</p>
+  </footer>
+
+  <!--
+    ORDEN IMPORTANTE:
+    portfolio-data.js debe cargarse antes de style.js porque contiene los textos.
+  -->
+  <script src="portfolio-data.js"></script>
+  <script src="style.js"></script>
+</body>
+</html>
