@@ -2,11 +2,7 @@
   DATOS DEL PORTAFOLIO
   Este archivo concentra casi todo el contenido editable del sitio.
 
-  Cómo agregar información:
-  - Para cambiar textos, edita title, label, body, details o evidence.
-  - Para agregar una tarjeta, copia un objeto completo dentro del arreglo.
-  - Para agregar evidencias, añade objetos en evidence con label y href.
-  - Evita borrar comas entre objetos; JavaScript las necesita.
+  Para cambiar textos del portafolio, edita title, label, body, details o evidence.
 */
 
 const portfolioData = {
@@ -67,9 +63,8 @@ const portfolioData = {
         label: "Caso 3",
         title: "Tercer caso integrador",
         body:
-          "El tercer caso integrador se enfocó en biodiversidad, biodiversidad de Guatemala, evolución, genética y biogeografía. Aunque aún no cuenta con nota, el proceso mantuvo la estrategia organizada del caso anterior, con estudio previo, uso de apuntes y división de tareas.",
-        details: ["Resultado: pendiente", "Tiempo: 2 horas por unidad", "Tema central: biodiversidad"],
-        evidence: [{ label: "Agregar evidencia del Caso 3", href: "#" }]
+          "El tercer caso integrador se enfocó en biodiversidad, biodiversidad de Guatemala, evolución, genética y biogeografía. El proceso mantuvo la estrategia organizada del caso anterior, con estudio previo, uso de apuntes y división de tareas.",
+        details: ["Tiempo: 2 horas por unidad", "Tema central: biodiversidad"]
       }
     ],
 
@@ -104,25 +99,11 @@ const portfolioData = {
         body:
           "No fue una actividad llamativa porque resultó demasiado larga, cansada y con una sensación fuerte de autoaprendizaje. Considero que podría mejorar si se relacionara con conceptos más concretos, menos extensos y con una guía más gradual.",
         evidence: [{ label: "Actividad Genética PDF", href: "../03_Actividades_No_Favoritas/Actividad_11_Genética.pdf" }]
-      },
-      {
-        label: "No llamativa 2",
-        title: "Espacio para agregar otra actividad",
-        body:
-          "Agrega aquí una segunda actividad no llamativa. La guía pide tres actividades actualizadas; si no existe evidencia, puedes colocar una reflexión breve y luego enlazar una captura o documento.",
-        evidence: [{ label: "Agregar evidencia", href: "#" }]
-      },
-      {
-        label: "No llamativa 3",
-        title: "Espacio para agregar otra actividad",
-        body:
-          "Agrega aquí una tercera actividad no llamativa. Explica qué no funcionó, por qué fue menos interesante y qué cambiarías para mejorar el aprendizaje.",
-        evidence: [{ label: "Agregar evidencia", href: "#" }]
       }
     ],
 
     theoryShorts:
-      "Para los cortos de teoría dediqué aproximadamente media hora de estudio, utilizando apuntes del cuaderno, repasos y videos explicativos. Considero que esta fue una de las áreas donde tuve más dificultad, porque no comprendía completamente la información y debí dedicar más tiempo de preparación. Esta sección puede complementarse con capturas de Canvas o evidencias de cada corto."
+      "Para los cortos de teoría dediqué aproximadamente media hora de estudio, utilizando apuntes del cuaderno, repasos y videos explicativos. Considero que esta fue una de las áreas donde tuve más dificultad, porque no comprendía completamente la información y debí dedicar más tiempo de preparación."
   },
 
   lab: {
@@ -178,7 +159,7 @@ const portfolioData = {
     ],
 
     csi:
-      "Aunque aún no cuento con la nota del CSI, considero que me fue bien porque apliqué conocimientos de biodiversidad, factores que afectan la fotosíntesis, presencia de enzimas en tejidos, colecciones biológicas, reproducción celular y sus fases. La actividad funcionó como una integración de habilidades desarrolladas en laboratorio."
+      "En el CSI apliqué conocimientos de biodiversidad, factores que afectan la fotosíntesis, presencia de enzimas en tejidos, colecciones biológicas, reproducción celular y sus fases. La actividad funcionó como una integración de habilidades desarrolladas en laboratorio."
   },
 
   finalReflection:

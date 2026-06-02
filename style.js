@@ -44,12 +44,12 @@ function setFieldImages() {
 /*
   FUNCIÓN: createEvidenceList
   Crea una lista de enlaces a documentos, fotos, PDF o presentaciones.
-  Si una evidencia usa href "#", queda como marcador para completar después.
 */
 function createEvidenceList(evidence = []) {
-  if (!evidence.length) return "";
+  const validEvidence = evidence.filter((item) => item.href && item.href !== "#");
+  if (!validEvidence.length) return "";
 
-  const items = evidence
+  const items = validEvidence
     .map((item) => `<li><a href="${item.href}" target="_blank" rel="noreferrer">${item.label}</a></li>`)
     .join("");
 
@@ -107,7 +107,7 @@ function renderCards(renderName, items) {
   const target = document.querySelector(`[data-render="${renderName}"]`);
   if (!target) return;
 
-  target.innerHTML = items.map(createCard).join("");
+  target.innerHTML = items.filter((item) => item.title && item.body).map(createCard).join("");
 }
 
 /*
