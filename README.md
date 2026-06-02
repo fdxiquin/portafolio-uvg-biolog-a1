@@ -1,70 +1,29 @@
 # Portafolio Digital de Ciencias de la Vida
 
-Esta carpeta contiene una versión profesional y editable del portafolio digital.
+Este proyecto contiene un portafolio digital academico elaborado para el curso Ciencias de la Vida de la Universidad del Valle de Guatemala, ciclo 1 de 2026.
+
+El sitio reune informacion personal academica, reflexiones, actividades, evidencias, documentos y archivos asociados al proceso de aprendizaje del curso. Su finalidad es exclusivamente educativa y de presentacion academica.
 
 ## Archivos principales
 
-- `index.html`: estructura general del sitio y secciones principales.
-- `style.css`: diseño visual, colores, tarjetas, responsive y animaciones.
-- `style.js`: funciones que insertan contenido, crean tarjetas y controlan navegación.
-- `portfolio-data.js`: textos, reflexiones, datos y enlaces a evidencias.
-- `assets/`: carpeta recomendada para imágenes, capturas y recursos propios.
+- `index.html`: estructura general del sitio.
+- `style.css`: estilos visuales, colores, tarjetas, responsive y animaciones.
+- `style.js`: funciones de renderizado, tarjetas, evidencias y navegacion.
+- `portfolio-data.js`: textos, reflexiones, datos academicos y enlaces a evidencias.
+- `assets/`: carpeta para recursos visuales o documentos propios del portafolio.
 
-## Cómo abrirlo
+## Uso permitido
 
-Abre `index.html` directamente en el navegador. No necesita servidor ni instalación.
+Este portafolio puede abrirse localmente desde `index.html` para revision academica, presentacion personal o consulta autorizada.
 
-## Cómo editar textos
+No requiere instalacion ni servidor. Basta con abrir el archivo `index.html` en un navegador.
 
-La forma más fácil es editar `portfolio-data.js`.
+## Confidencialidad y restriccion de uso
 
-Para cambiar una reflexión:
+Este es un proyecto educativo privado. Al contener informacion academica, evidencias, documentos, archivos y referencias relacionadas con la Universidad del Valle de Guatemala, su uso es estrictamente confidencial.
 
-```js
-body: "Escribe aquí tu nueva reflexión."
-```
+Queda prohibida la copia, reproduccion, distribucion, modificacion, publicacion, descarga, extraccion, reutilizacion o divulgacion total o parcial del contenido, codigo, archivos, evidencias, documentos o recursos expuestos en este portafolio sin autorizacion expresa del autor.
 
-Para agregar una evidencia:
+Tambien queda prohibido usar este material para fines comerciales, institucionales no autorizados, publicaciones externas, entrenamiento de modelos, repositorios publicos, recopilaciones, bases de datos o cualquier otro uso distinto al proposito academico original.
 
-```js
-evidence: [
-  { label: "Nombre visible del archivo", href: "assets/archivo.pdf" }
-]
-```
-
-Para agregar una tarjeta nueva, copia un bloque como este dentro del arreglo correspondiente:
-
-```js
-{
-  label: "Favorita 4",
-  title: "Nombre de la actividad",
-  body: "Explica por qué fue importante o qué aprendiste.",
-  evidence: [{ label: "Documento", href: "assets/documento.pdf" }]
-}
-```
-
-## Dónde agregar información según la guía
-
-- Inicio: `profile`, `homeBlocks` y `finalReflection`.
-- Casos integradores: `theory.integrativeCases`.
-- Actividades favoritas: `theory.favoriteActivities`.
-- Actividades no llamativas: `theory.leastFavoriteActivities`.
-- Cortos de teoría: `theory.theoryShorts`.
-- Pasaportes: `lab.passports`.
-- Cortos de laboratorio: `lab.labShorts`.
-- Laboratorios: `lab.labs`.
-- CSI: `lab.csi`.
-
-## Evidencias pendientes recomendadas
-
-La estructura ya está lista, pero conviene agregar:
-
-- Evidencia del Caso 3.
-- Capturas o entregas de cortos de teoría.
-- Capturas o entregas de cortos de laboratorio.
-- Evidencia visual o entrega del CSI.
-- Dos actividades no llamativas adicionales si quieres cumplir la guía al máximo.
-
-## Nota importante
-
-El sitio está pensado para ser fácil de actualizar. Si solo quieres cambiar contenido, edita `portfolio-data.js`. Si quieres cambiar el diseño, edita `style.css`. Si quieres agregar una sección nueva, crea la sección en `index.html`, agrega sus datos en `portfolio-data.js` y llama el render correspondiente en `style.js`.
+El acceso a este proyecto no implica permiso de uso, copia ni redistribucion. Cualquier persona que reciba o visualice estos archivos debe mantener la confidencialidad del contenido y respetar la propiedad academica e intelectual del autor y de los materiales vinculados al curso.
