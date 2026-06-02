@@ -10,7 +10,7 @@ const portfolioData = {
     name: "Daniel Fernando Xiquin Tezén",
     summary:
       "Estudiante de Ingeniería en Ciencias de la Computación y Tecnologías de la Información. Este portafolio reúne evidencias, reflexiones y aprendizajes desarrollados durante el curso Ciencias de la Vida.",
-    photo: "../../Portafolio_1/Alumnos ENA-32 (2).jpg",
+    photo: "assets/Alumnos ENA-32 (2).jpg",
     caption: "Perfil académico usado como presentación del portafolio.",
     facts: [
       { label: "Carrera", value: "Ingeniería en Ciencias de la Computación y Tecnologías de la Información" },

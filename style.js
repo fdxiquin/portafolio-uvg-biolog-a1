@@ -8,6 +8,9 @@
   - Agrega animación suave al entrar cada bloque en pantalla.
 */
 
+const restrictedFileMessage =
+  "COMUNICARSE CON EL AUTOR DEL PORTAFOLIO PARA TENER ACCESO A LOS DOCOUMENTOS CONFICENCIALES";
+
 /*
   FUNCIÓN: getNestedValue
   Sirve para leer valores profundos dentro de portfolioData usando rutas como:
@@ -246,6 +249,34 @@ function setupSmoothScroll() {
 }
 
 /*
+  FUNCIÓN: setupEvidenceAccessCheck
+  Verifica si una evidencia existe antes de abrirla. Si GitHub Pages no
+  encuentra el archivo, muestra el aviso de acceso restringido.
+*/
+function setupEvidenceAccessCheck() {
+  document.addEventListener("click", async (event) => {
+    const link = event.target.closest(".evidence-list a");
+    if (!link) return;
+
+    event.preventDefault();
+
+    try {
+      const targetUrl = new URL(link.getAttribute("href"), window.location.href);
+      const response = await fetch(targetUrl.href, { method: "HEAD" });
+
+      if (!response.ok) {
+        alert(restrictedFileMessage);
+        return;
+      }
+
+      window.open(targetUrl.href, "_blank", "noreferrer");
+    } catch (error) {
+      alert(restrictedFileMessage);
+    }
+  });
+}
+
+/*
   INICIO DE LA APLICACIÓN:
   DOMContentLoaded espera a que el HTML esté listo antes de insertar contenido.
 */
@@ -254,4 +285,5 @@ document.addEventListener("DOMContentLoaded", () => {
   setupRevealAnimation();
   setupActiveNavigation();
   setupSmoothScroll();
+  setupEvidenceAccessCheck();
 });
